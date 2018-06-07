@@ -1,7 +1,6 @@
 #5619562
 
 import numpy as np
-from numpy.linalg import inv
 
 def normal_equation_prediction(X, y):
     """
@@ -15,7 +14,7 @@ def normal_equation_prediction(X, y):
     :return: prediction
     :rtype: np.array
     """
-    X = np.append(np.ones((len(X),1), dtype=int), X, axis=1)
-    w = inv(X.T.dot(X)).dot(X.T).dot(y)
+    X = np.append(np.ones((len(X), 1), dtype=int), X, axis=1)
+    w = np.linalg.inv(X.T.dot(X)).dot(X.T).dot(y)
     prediction = np.dot(X, w)
     return prediction
