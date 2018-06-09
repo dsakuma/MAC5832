@@ -51,10 +51,6 @@ def compute_cost(X, y, w):
     """
     
     # YOUR CODE HERE:
-    #     print("comp")
-#     print(X.shape)
-#     print(y.shape)
-#     print(w.shape)
     N = X.shape[0]
     J = ((X.dot(w) - y).T).dot(X.dot(w) - y) / N
     J = J[0][0]
@@ -144,8 +140,26 @@ def stochastic_gradient_descent(X, y, w, learning_rate, num_iters, batch_size):
     :return: weights, weights history, cost history
     :rtype: np.array(shape=(d, 1)), list, list
     """
+    
+    weights_history = [w]
+    cost_history = [compute_cost(X, y, w)]
+
     # YOUR CODE HERE:
-    raise NotImplementedError
+    for i in range(1, num_iters):
+        idx = np.random.choice(X.shape[0], batch_size, replace=False)
+        Xbatch = X[idx]
+        ybatch = y[idx]
+        #compute grad
+        grad = compute_wgrad(Xbatch, ybatch, w)
+        grad = grad.reshape((2,1))
+        #apply weights
+        w = w-(learning_rate*grad)
+        weights_history.append(w)
+        #compute cost
+        Jw =  compute_cost(X, y, w)
+        #save cost 
+        cost_history.append(Jw)
+        num_iters += 1
     # END YOUR CODE
 
     return w, weights_history, cost_history
