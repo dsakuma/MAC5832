@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 __pycache__
+kaggle/notebooks/examples
+.DS_Store
