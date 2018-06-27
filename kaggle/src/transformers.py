@@ -33,17 +33,8 @@ def apply_cube_root(x):
 def apply_reciprocal(x):
     return 1 / x
 
-#def extract_issued_at2(x):
-#    return datetime.datetime.strptime(x['issued_at'][0:19],  "%Y-%m-%dT%H:%M:%S")
-
-def extract_issued_at(x):
-    return datetime.datetime.strptime(x['data']['issued_at'][0:19],  "%Y-%m-%dT%H:%M:%S")
-
 #def extract_issued_at_str(x):
 #    return x['data']['issued_at']
-
-#def extract_issued_at_datetime(x):
-#    return datetime.datetime.strptime(x['issued_at_str'][0:19], "%Y-%m-%dT%H:%M:%S")
 
 def bin_data(x, **kw_args):
     columns = kw_args['columns']
