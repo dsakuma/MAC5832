@@ -33,8 +33,8 @@ def apply_cube_root(x):
 def apply_reciprocal(x):
     return 1 / x
 
-#def extract_issued_at_str(x):
-#    return x['data']['issued_at']
+def extract_not_prev_contacted(x):
+    return x == 999
 
 def bin_data(x, **kw_args):
     columns = kw_args['columns']
