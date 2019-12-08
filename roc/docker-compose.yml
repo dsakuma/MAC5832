@@ -2,7 +2,7 @@ jupyter:
   build: .
   dockerfile: docker/Dockerfile
   ports:
-    - 4321:8888
+    - 8888:8888
   volumes:
     - .:/notebook
   working_dir: /notebook

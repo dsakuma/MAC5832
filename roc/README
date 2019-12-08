@@ -1,0 +1,39 @@
+1. Alunos
+---------
+
+Daniel Sakuma (5619562)
+
+
+2. Conteúdo
+-----------
+
+.
+|-- README                   - este arquivo
+|-- data          
+   `-- raw
+      `-- train.cs           - dataset de bank telemarketing 
+|-- docker
+   `-- Dockerfile
+|-- docker-compose.yml    
+|-- notebooks 
+   `-- roc.ipynb             - notebook com a análise ROC
+|-- requirements.txt           
+`-- src
+   `-- transformers.py       - funções auxiliares
+
+
+3. Como rodar
+-------------
+
+Este projeto está pronto para ser usado com Docker. É necessário ter o Docker e o 
+utilitário docker-compose instalados.
+
+ Para iniciar, execute:
+
+	$ docker-compose up -d
+
+E acesse no browser: 
+
+	localhost:8888
+
+
